@@ -1,0 +1,43 @@
+{
+    "home" : {
+        "title": "Le Point D'Orgues",
+        "description": "Hausgemachte Küche aus regionalen Produkten",
+        "ctaButton": "Unsere Saisonkarte"        
+    },
+    "topBar" : {
+        "homeBtn": "Startseite",
+        "menuBtn": "Speisekarte",
+        "newsBtn": "Nachrichten",
+        "contactBtn": "Kontakt"
+    },
+    "menu": {
+        "title": "Unsere Speisekarte",
+        "dishes": {
+            "bruchetta": { "name": "Tomaten Bruschetta", "description": "Geröstetes Brot mit frischen Tomaten und Basilikum" },
+            "soupeOignon": { "name": "Zwiebelsuppe", "description": "Traditionelles Rezept mit gratiniertem Käse" },
+            "saladeChevre": { "name": "Warmer Ziegenkäsesalat", "description": "Geschmolzener Ziegenkäse auf frischem Salat" },
+            "carpaccio": { "name": "Rindercarpaccio", "description": "Dünne Rindfleischscheiben in Olivenöl mariniert" },
+            "terrineMaison": { "name": "Hausgemachte Terrine", "description": "Artisanale Spezialität, serviert mit Gewürzgurken" },
+            "burger": { "name": "Hausgemachter Burger", "description": "Rinderpatty, Cheddar, karamellisierte Zwiebeln und Pommes" },
+            "pouletBasquaise": { "name": "Baskisches Huhn", "description": "Hühnereintopf mit Paprika und Tomaten" },
+            "lasagnes": { "name": "Lasagne Bolognese", "description": "Nudeln mit Tomatensoße und Hackfleisch" },
+            "saumonGrille": { "name": "Gegrillter Lachs", "description": "Serviert mit knackigem Gemüse und Zitrone" },
+            "risottoChampignons": { "name": "Pilzrisotto", "description": "Cremiges Risotto mit Steinpilzen" },
+            "tiramisu": { "name": "Tiramisu", "description": "Italienisches Dessert mit Kaffee und Mascarpone" },
+            "mousseChocolat": { "name": "Schokoladenmousse", "description": "Leicht und cremig, hausgemacht" },
+            "cremeBrulee": { "name": "Crème Brûlée", "description": "Vanillepudding mit karamellisierter Oberfläche" },
+            "tartePomme": { "name": "Apfeltarte", "description": "Warm serviert mit einer Kugel Eis" },
+            "fondantChocolat": { "name": "Schokoladenfondant", "description": "Intensiver, flüssiger Kern" },
+            "eauMinerale": { "name": "Mineralwasser", "description": "Still oder sprudelnd" },
+            "cocaCola": { "name": "Coca-Cola", "description": "33 cl" },
+            "vinRouge": { "name": "Rotwein", "description": "Côtes-du-Rhône oder Bordeaux" },
+            "vinBlanc": { "name": "Weißwein", "description": "Chardonnay oder Sauvignon" },
+            "biérePression": { "name": "Bier vom Fass", "description": "Kalt serviert" },
+            "menuClassique": { "name": "Klassisches Menü", "description": "Vorspeise + Hauptgericht + Dessert nach Wahl" },
+            "menuVegetarien": { "name": "Vegetarisches Menü", "description": "Rezepte mit saisonalem Gemüse" },
+            "menuEnfant": { "name": "Kinder-Menü", "description": "Hauptgericht + Dessert + Getränk (Saft oder Limonade)" },
+            "menuGourmet": { "name": "Gourmet-Menü", "description": "Ausgewählte Spezialitäten des Küchenchefs" },
+            "menuDegustation": { "name": "Degustationsmenü", "description": "5-Gänge-Menü mit Weinbegleitung" }
+        }
+    }
+}

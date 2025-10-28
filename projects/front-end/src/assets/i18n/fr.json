@@ -1,0 +1,44 @@
+{
+    "home" : {
+        "title": "Le Point D'Orgues",
+        "description": "Cuisine faite maison élaborée à partir de produits locaux",
+        "ctaButton": "Notre carte du moment"        
+    },
+    "topBar" : {
+        "homeBtn": "Acceuil",
+        "menuBtn": "Carte",
+        "newsBtn": "Actus",
+        "contactBtn": "Contact"
+    },
+    "menu": {
+        "title": "Notre Carte",
+        "dishes": {
+            "bruchetta": { "name": "Bruschetta à la tomate", "description": "Pain grillé garni de tomates fraîches et de basilic" },
+            "soupeOignon": { "name": "Soupe à l’oignon", "description": "Recette traditionnelle gratinée au fromage" },
+            "saladeChevre": { "name": "Salade de chèvre chaud", "description": "Chèvre fondant sur lit de salade croquante" },
+            "carpaccio": { "name": "Carpaccio de bœuf", "description": "Fines tranches de bœuf marinées à l’huile d’olive" },
+            "terrineMaison": { "name": "Terrine maison", "description": "Spécialité artisanale servie avec cornichons" },
+            "burger": { "name": "Burger maison", "description": "Steak haché, cheddar, oignons caramélisés et frites" },
+            "pouletBasquaise": { "name": "Poulet basquaise", "description": "Poulet mijoté avec poivrons et tomates" },
+            "lasagnes": { "name": "Lasagnes à la bolognaise", "description": "Pâtes, sauce tomate et viande hachée" },
+            "saumonGrille": { "name": "Saumon grillé", "description": "Accompagné de légumes croquants et citron" },
+            "risottoChampignons": { "name": "Risotto aux champignons", "description": "Crémeux et parfumé aux cèpes" },
+            "tiramisu": { "name": "Tiramisu", "description": "Dessert italien au café et mascarpone" },
+            "mousseChocolat": { "name": "Mousse au chocolat", "description": "Légère et fondante, préparée maison" },
+            "cremeBrulee": { "name": "Crème brûlée", "description": "À la vanille, caramélisée à la flamme" },
+            "tartePomme": { "name": "Tarte aux pommes", "description": "Servie tiède avec une boule de glace" },
+            "fondantChocolat": { "name": "Fondant au chocolat", "description": "Cœur coulant et intense en cacao" },
+            "eauMinerale": { "name": "Eau minérale", "description": "Plate ou pétillante au choix" },
+            "cocaCola": { "name": "Coca-Cola", "description": "33 cl" },
+            "vinRouge": { "name": "Verre de vin rouge", "description": "Côtes-du-Rhône ou Bordeaux" },
+            "vinBlanc": { "name": "Verre de vin blanc", "description": "Chardonnay ou Sauvignon" },
+            "biérePression": { "name": "Bière pression", "description": "Servie bien fraîche" },
+            "menuClassique": { "name": "Menu Classique", "description": "Entrée + Plat + Dessert au choix" },
+            "menuVegetarien": { "name": "Menu Végétarien", "description": "Entrée + Plat + Dessert suprise avec des recettes à base de légumes de saison" },
+            "menuEnfant": { "name": "Menu Enfant", "description": "Plat + Dessert + Boisson (jus ou soda)" },
+            "menuGourmet": { "name": "Menu Gourmet", "description": "Sélection raffinée de plats du chef" },
+            "menuDegustation": { "name": "Menu Dégustation", "description": "5 plats en accord mets et vins" }
+        }
+
+    }
+}

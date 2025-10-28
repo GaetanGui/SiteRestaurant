@@ -1,0 +1,32 @@
+<div class="background">
+    <div class="ul">
+
+        <a routerLink="/home">
+            <div class="logo"></div>
+        </a>
+
+        <div class="buttons">
+            <tgam-gjt-button [label]="'topBar.homeBtn' | translate" routerLink="/home"></tgam-gjt-button>
+            <tgam-gjt-button [label]="'topBar.menuBtn' | translate" routerLink="/menu"></tgam-gjt-button>
+            <tgam-gjt-button [label]="'topBar.newsBtn' | translate" routerLink="/news"></tgam-gjt-button>
+            <tgam-gjt-button [label]="'topBar.contactBtn' | translate" routerLink="/contact"></tgam-gjt-button>
+            <a href="https://www.facebook.com/Le.bouchon.ardechois/" target="_blank" rel="noopener noreferrer" class="link">
+                <i class="social-media fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.tripadvisor.fr/Restaurant_Review-g4764211-d13109894-Reviews-Le_Bouchon_Ardechois-Jaujac_Ardeche_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer">
+                <img class="social-media tripadvisor" src="../../../../assets/tripadvisor.png"/>
+            </a>
+            <div class="menu-container">
+                <tgam-gjt-button mat-button [matMenuTriggerFor]="menu" [label]="selectedItem" ></tgam-gjt-button>
+
+                <mat-menu #menu="matMenu" xPosition="after" yPosition="below">
+                    <button mat-menu-item *ngFor="let item of menuItems" (click)="onSelect(item)">
+                        {{ item }}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</div>
+
+

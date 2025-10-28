@@ -1,0 +1,19 @@
+<div class="card category-card shadow-lg border-0">
+  <div class="card-header category-header text-center text-white py-3">
+    <h2 class="mb-0 fw-bold text-uppercase">
+      {{ title }} </h2>
+  </div>
+
+  <div class="card-body body">
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let dish of dishes">
+        <tgam-menu-item
+          (openImage)="onOpenImage($event)" [dishName]="(dish.key + '.name') | translate"
+          [description]="(dish.key + '.description') | translate"
+          [price]="dish.price"
+          [image]="dish.image">
+        </tgam-menu-item>
+      </div>
+    </div>
+  </div>
+</div>

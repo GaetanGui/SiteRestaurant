@@ -1,0 +1,43 @@
+{
+    "home" : {
+        "title": "Le Point D'Orgues",
+        "description": "Homemade cuisine crafted from local products",
+        "ctaButton": "Our seasonal menu"        
+    },
+    "topBar" : {
+        "homeBtn": "Home",
+        "menuBtn": "Menu",
+        "newsBtn": "News",
+        "contactBtn": "Contact"
+    },
+    "menu": {
+        "title": "Our Menu",
+        "dishes": {
+            "bruchetta": { "name": "Tomato Bruschetta", "description": "Grilled bread topped with fresh tomatoes and basil" },
+            "soupeOignon": { "name": "Onion Soup", "description": "Traditional recipe with gratinated cheese" },
+            "saladeChevre": { "name": "Warm Goat Cheese Salad", "description": "Melted goat cheese on a bed of fresh salad" },
+            "carpaccio": { "name": "Beef Carpaccio", "description": "Thin slices of beef marinated in olive oil" },
+            "terrineMaison": { "name": "Homemade Terrine", "description": "Artisanal specialty served with pickles" },
+            "burger": { "name": "Homemade Burger", "description": "Beef patty, cheddar, caramelized onions, and fries" },
+            "pouletBasquaise": { "name": "Basque Chicken", "description": "Chicken stew with peppers and tomatoes" },
+            "lasagnes": { "name": "Bolognese Lasagna", "description": "Pasta with tomato sauce and minced meat" },
+            "saumonGrille": { "name": "Grilled Salmon", "description": "Served with crunchy vegetables and lemon" },
+            "risottoChampignons": { "name": "Mushroom Risotto", "description": "Creamy risotto flavored with porcini mushrooms" },
+            "tiramisu": { "name": "Tiramisu", "description": "Italian dessert with coffee and mascarpone" },
+            "mousseChocolat": { "name": "Chocolate Mousse", "description": "Light and creamy, homemade" },
+            "cremeBrulee": { "name": "Crème Brûlée", "description": "Vanilla custard with caramelized top" },
+            "tartePomme": { "name": "Apple Tart", "description": "Served warm with a scoop of ice cream" },
+            "fondantChocolat": { "name": "Chocolate Fondant", "description": "Rich molten chocolate center" },
+            "eauMinerale": { "name": "Mineral Water", "description": "Still or sparkling" },
+            "cocaCola": { "name": "Coca-Cola", "description": "33 cl" },
+            "vinRouge": { "name": "Red Wine", "description": "Côtes-du-Rhône or Bordeaux" },
+            "vinBlanc": { "name": "White Wine", "description": "Chardonnay or Sauvignon" },
+            "biérePression": { "name": "Draft Beer", "description": "Served cold" },
+            "menuClassique": { "name": "Classic Menu", "description": "Starter + Main + Dessert of your choice" },
+            "menuVegetarien": { "name": "Vegetarian Menu", "description": "Starter + Main + Dessert surprise with easonal vegetable-based recipes " },
+            "menuEnfant": { "name": "Kids Menu", "description": "Main + Dessert + Drink (juice or soda)" },
+            "menuGourmet": { "name": "Gourmet Menu", "description": "Chef’s refined selection" },
+            "menuDegustation": { "name": "Tasting Menu", "description": "5 courses paired with wine" }
+        }
+    }
+}
