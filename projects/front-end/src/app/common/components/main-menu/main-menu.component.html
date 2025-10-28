@@ -1,23 +1,38 @@
 <div class="background">
     <div class="ul">
 
-        <a routerLink="/home">
+        <a routerLink="/home" *ngIf="!(responsive.isMobile$ | async)">
             <div class="logo"></div>
         </a>
 
         <div class="buttons">
-            <tgam-gjt-button [label]="'topBar.homeBtn' | translate" routerLink="/home"></tgam-gjt-button>
-            <tgam-gjt-button [label]="'topBar.menuBtn' | translate" routerLink="/menu"></tgam-gjt-button>
-            <tgam-gjt-button [label]="'topBar.newsBtn' | translate" routerLink="/news"></tgam-gjt-button>
-            <tgam-gjt-button [label]="'topBar.contactBtn' | translate" routerLink="/contact"></tgam-gjt-button>
-            <a href="https://www.facebook.com/Le.bouchon.ardechois/" target="_blank" rel="noopener noreferrer" class="link">
-                <i class="social-media fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.tripadvisor.fr/Restaurant_Review-g4764211-d13109894-Reviews-Le_Bouchon_Ardechois-Jaujac_Ardeche_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer">
-                <img class="social-media tripadvisor" src="../../../../assets/tripadvisor.png"/>
-            </a>
+            <div *ngIf="responsive.isWeb$ | async" class="buttonBar">
+                <tgam-gjt-button [label]="'topBar.homeBtn' | translate" routerLink="/home"></tgam-gjt-button>
+                <tgam-gjt-button [label]="'topBar.menuBtn' | translate" routerLink="/menu"></tgam-gjt-button>
+                <tgam-gjt-button [label]="'topBar.newsBtn' | translate" routerLink="/news"></tgam-gjt-button>
+                <tgam-gjt-button [label]="'topBar.contactBtn' | translate" routerLink="/contact"></tgam-gjt-button>
+            </div>
+            <div *ngIf="responsive.isMobile$ | async" class="buttonBar">
+                <tgam-gjt-button icon="fa-solid fa-house fa-sm" routerLink="/home" size="s"></tgam-gjt-button>
+                <tgam-gjt-button icon="fa-solid fa-utensils fa-sm" routerLink="/menu" size="s"></tgam-gjt-button>
+                <tgam-gjt-button icon="fa-solid fa-newspaper fa-sm" routerLink="/news" size="s"></tgam-gjt-button>
+                <tgam-gjt-button icon="fa-solid fa-message fa-sm" routerLink="/contact" size="s"></tgam-gjt-button>
+            </div>
+
+            <div *ngIf="responsive.isWeb$ | async" class="buttonBar">
+                <tgam-gjt-button icon="fa-brands fa-facebook"  link="https://www.facebook.com/LepointdorguesFabras/"></tgam-gjt-button>
+                <tgam-gjt-button icon="fa-brands fa-google"  link="https://www.tripadvisor.fr/Restaurant_Review-g7019537-d17676398-Reviews-Le_Point_D_Orgues-Fabras_Ardeche_Auvergne_Rhone_Alpes.html"></tgam-gjt-button>
+
+            </div>
+            <div *ngIf="responsive.isMobile$ | async" class="buttonBar">
+                <tgam-gjt-button icon="fa-brands fa-facebook"  link="https://www.facebook.com/LepointdorguesFabras/" size="s"></tgam-gjt-button>
+                <tgam-gjt-button icon="fa-brands fa-google"  link="https://www.tripadvisor.fr/Restaurant_Review-g7019537-d17676398-Reviews-Le_Point_D_Orgues-Fabras_Ardeche_Auvergne_Rhone_Alpes.html" size="s">
+
+                </tgam-gjt-button>
+            </div>
+
             <div class="menu-container">
-                <tgam-gjt-button mat-button [matMenuTriggerFor]="menu" [label]="selectedItem" ></tgam-gjt-button>
+                <tgam-gjt-button mat-button [matMenuTriggerFor]="menu" [label]="selectedItem" [size]="(responsive.isMobile$ | async) ? 's' : 'm'" ></tgam-gjt-button>
 
                 <mat-menu #menu="matMenu" xPosition="after" yPosition="below">
                     <button mat-menu-item *ngFor="let item of menuItems" (click)="onSelect(item)">

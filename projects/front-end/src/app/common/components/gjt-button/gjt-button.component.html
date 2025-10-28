@@ -1,3 +1,20 @@
-<button [disabled]="disabled" class="style-btn">
+<button [disabled]="disabled" *ngIf="!link"
+    class="style-btn"
+    [class.btn-small]="size === 's'"
+    [class.btn-medium]="size === 'm'"
+    [class.btn-large]="size === 'l'">
+
     <span *ngIf="label">{{ label }}</span>
+    <i *ngIf="icon" [class]="icon"></i>
 </button>
+
+<a *ngIf="link"
+   class="style-btn"
+   [class.btn-small]="size === 's'"
+   [class.btn-medium]="size === 'm'"
+   [class.btn-large]="size === 'l'"
+   [href]="link"
+   target="_blank">
+    <span *ngIf="label">{{ label }}</span>
+    <i *ngIf="icon" [class]="icon"></i>
+</a>
