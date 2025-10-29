@@ -57,19 +57,50 @@ export class MenuPageComponent {
 
   public groupedCategories: GroupedCategory[] = [];
 
+  public availableCategories: string[] = [];
+  
+  // --- MODIFICATIONS ---
+
+  /** La catégorie (objet unique) actuellement affichée. */
+  public activeCategory?: GroupedCategory; // Plus une liste, mais un objet
+
+  /** Le nom de la catégorie sélectionnée (pour le style du bouton). */
+  public selectedCategoryName?: string;
+
   ngOnInit() {
     this.groupDishes();
   }
   
   groupDishes() {
-    const categories = Array.from(new Set(this.dishes.map(d => d.category)));
+    // 1. Obtenir les noms uniques des catégories (SANS 'Tous')
+    this.availableCategories = Array.from(new Set(this.dishes.map(d => d.category)));
 
-    this.groupedCategories = categories.map(categoryName => {
+    // 2. Créer la liste complète de toutes les catégories groupées
+    this.groupedCategories = this.availableCategories.map(categoryName => {
       return {
         name: categoryName,
         dishes: this.dishes.filter(dish => dish.category === categoryName)
       };
     });
+
+    // 3. Sélectionner la première catégorie par défaut (s'il y en a une)
+    if (this.availableCategories.length > 0) {
+      this.onSelectCategory(this.availableCategories[0]);
+    }
+  }
+  onClearFilter() {
+    this.selectedCategoryName = undefined;
+    this.activeCategory = undefined; 
+  }
+
+  onSelectCategory(categoryName: string) {
+    // Met à jour le nom pour le style du bouton
+    this.selectedCategoryName = categoryName;
+
+    // Trouve l'objet catégorie correspondant et le définit comme catégorie active
+    this.activeCategory = this.groupedCategories.find(
+      group => group.name === categoryName
+    );
   }
 
   openImage(url: string) { this.selectedImage = url;}
