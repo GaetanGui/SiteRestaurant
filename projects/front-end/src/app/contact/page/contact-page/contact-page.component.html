@@ -1,1 +1,85 @@
-<p>contact-page works!</p>
+<div class="contact-container">
+  <h2>{{ 'contact.title' | translate }}</h2>
+  <p>{{ 'contact.subtitle' | translate }}</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
+    <div class="form-group form-objet-selector">
+      <label>{{ 'contact.form.objet.label' | translate }}</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" formControlName="objet" value="reservation">
+          {{ 'contact.form.objet.reservation' | translate }}
+        </label>
+        <label>
+          <input type="radio" formControlName="objet" value="application">
+          {{ 'contact.form.objet.application' | translate }}
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nom">{{ 'contact.form.nom.label' | translate }}</label>
+      <input id="nom" type="text" formControlName="nom">
+      <div *ngIf="nom.invalid && (nom.touched || formSubmitted)" class="error-msg">
+        {{ 'contact.form.nom.error' | translate }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">{{ 'contact.form.email.label' | translate }}</label>
+      <input id="email" type="email" formControlName="email">
+      <div *ngIf="email.invalid && (email.touched || formSubmitted)" class="error-msg">
+        {{ 'contact.form.email.error' | translate }}
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="telephone">{{ 'contact.form.telephone.label' | translate }}</label>
+      <input id="telephone" type="tel" formControlName="telephone">
+       <div *ngIf="contactForm.get('telephone')!.invalid && (contactForm.get('telephone')!.touched || formSubmitted)" class="error-msg">
+        {{ 'contact.form.telephone.error' | translate }}
+      </div>
+    </div>
+
+    <div *ngIf="objet.value === 'reservation'" class="conditional-fields">
+      <h3 class="mt-2">{{ 'contact.form.reservation.title' | translate }}</h3>
+      <div class="form-group">
+        <label for="dateReservation">{{ 'contact.form.reservation.date' | translate }}</label>
+        <input id="dateReservation" type="date" formControlName="dateReservation">
+      </div>
+      <div class="form-group">
+        <label for="heureReservation">{{ 'contact.form.reservation.heure' | translate }}</label>
+        <input id="heureReservation" type="time" formControlName="heureReservation">
+      </div>
+      <div class="form-group">
+        <label for="nbPersonnes">{{ 'contact.form.reservation.personnes' | translate }}</label>
+        <input id="nbPersonnes" type="number" formControlName="nbPersonnes" min="1">
+      </div>
+    </div>
+
+    <div *ngIf="objet.value === 'application'" class="conditional-fields">
+      <h3 class="mt-2">{{ 'contact.form.application.title' | translate }}</h3>
+      <div class="form-group">
+        <label for="posteSouhaite">{{ 'contact.form.application.poste' | translate }}</label>
+        <input id="posteSouhaite" type="text" formControlName="posteSouhaite" [placeholder]="'contact.form.application.postePlaceholder' | translate">
+      </div>
+      <div class="form-group">
+        <label for="cv">{{ 'contact.form.application.cv' | translate }}</label>
+        <input id="cv" type="file" (change)="onFileChange($event)">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">{{ 'contact.form.message' | translate }}</label>
+      <textarea id="message" formControlName="message" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" [disabled]="contactForm.invalid" class="submit-btn">
+        {{ 'contact.form.submit' | translate }}
+      </button>
+    </div>
+
+  </form>
+</div>

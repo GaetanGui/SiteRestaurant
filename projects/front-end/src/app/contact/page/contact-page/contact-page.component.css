@@ -1,0 +1,135 @@
+/* 1. Le fond de la page
+   On applique le fond gris clair "Minimaliste Élégant" 
+   au composant lui-même pour que la "carte" blanche ressorte.
+*/
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f7fa; /* Le fond gris clair de la charte */
+  padding: 40px 15px; /* Aération en haut/bas et sur les côtés */
+  box-sizing: border-box;
+}
+
+/* 2. La "Carte" du formulaire
+   Le formulaire devient une carte blanche avec une ombre douce,
+   exactement comme les cartes du menu.
+*/
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto; /* Centré */
+  margin-top: 90px;
+  padding: 30px;
+  background-color: #ffffff; /* Fond blanc pur */
+  border-radius: 12px; /* Mêmes coins arrondis que les cartes menu */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); /* Mêmes ombres */
+}
+
+/* 3. Titres */
+.contact-container h2 {
+  text-align: center;
+  color: #2c3e50; /* Couleur contraste (bleu-gris foncé) */
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* 4. Champs de formulaire (Inputs)
+   On les assortit aux filtres "non-actifs"
+*/
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c8d6e0; /* Bordure grise claire (style filtre) */
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fcfcfc; /* Léger fond pour l'input */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #34495e; /* Accent bleu pétrole au focus */
+  box-shadow: 0 0 0 3px rgba(52, 73, 94, 0.1); /* Aura de focus */
+}
+
+/* 5. Sélecteur Radio (GROSSE AMÉLIORATION)
+   On transforme les radios moches en boutons "pilules"
+   qui ressemblent à nos filtres de menu.
+*/
+.form-objet-selector {
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+  gap: 10px;
+}
+
+/* On cache le vrai bouton radio */
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #c8d6e0; /* Style filtre non-actif */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.radio-group label:hover {
+  background-color: #f5f7fa;
+  border-color: #34495e;
+}
+
+/* Style du label quand le radio EST coché */
+.radio-group label:has(input[type="radio"]:checked) {
+  background-color: #34495e; /* Style filtre ACTIF */
+  color: #ffffff;
+  border-color: #34495e;
+  box-shadow: 0 4px 10px rgba(52, 73, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 6. Bouton de Soumission
+   On le fait ressembler EXACTEMENT à un filtre actif.
+*/
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #34495e;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover{
+    background-color: #537392
+  }
+}

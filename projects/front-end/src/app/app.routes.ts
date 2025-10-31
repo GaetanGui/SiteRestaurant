@@ -3,6 +3,7 @@ import { HomePageComponent } from './home/page/home-page/home-page.component';
 import { MenuPageComponent } from './menu/page/menu-page/menu-page.component';
 import { NewsPageComponent } from './news/page/news-page/news-page.component';
 import { ContactPageComponent } from './contact/page/contact-page/contact-page.component';
+import { MenuDetailPageComponent } from './menu/page/menu-detail-page/menu-detail-page.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,10 @@ export const routes: Routes = [
     {
         path: 'menu',
         component: MenuPageComponent
+    },
+    {
+        path: 'menu/detail',
+        component: MenuDetailPageComponent
     },
     {
         path: 'news',

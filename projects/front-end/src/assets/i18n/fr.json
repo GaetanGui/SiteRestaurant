@@ -38,7 +38,48 @@
             "menuEnfant": { "name": "Menu Enfant", "description": "Plat + Dessert + Boisson (jus ou soda)" },
             "menuGourmet": { "name": "Menu Gourmet", "description": "Sélection raffinée de plats du chef" },
             "menuDegustation": { "name": "Menu Dégustation", "description": "5 plats en accord mets et vins" }
+        },
+        "entrees": "Entrées",
+        "plats": "Plats",
+        "desserts": "Desserts",
+        "boissons": "Boissons",
+        "menus": "Menus"
+    },
+    "contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Une question, une réservation ou envie de rejoindre l'équipe ?",
+        "form": {
+        "objet": {
+            "label": "Objet de votre message",
+            "reservation": "Réserver une table",
+            "application": "Postuler"
+        },
+        "nom": {
+            "label": "Nom complet",
+            "error": "Le nom est requis."
+        },
+        "email": {
+            "label": "Email",
+            "error": "Un email valide est requis."
+        },
+        "telephone": {
+            "label": "Téléphone",
+            "error": "Le téléphone est requis."
+        },
+        "message": "Message (optionnel)",
+        "reservation": {
+            "title": "Détails de la réservation",
+            "date": "Date",
+            "heure": "Heure",
+            "personnes": "Nombre de personnes"
+        },
+        "application": {
+            "title": "Votre candidature",
+            "poste": "Poste souhaité",
+            "postePlaceholder": "Ex: Service, Cuisine...",
+            "cv": "Votre CV (PDF, Word)"
+        },
+        "submit": "Envoyer"
         }
-
     }
 }

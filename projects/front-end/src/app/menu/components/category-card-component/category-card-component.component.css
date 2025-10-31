@@ -1,24 +1,29 @@
 /* --- Styles pour les cards de catégorie --- */
 .category-card {
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background-color: #ffffff21;
+  background-color: #ffffff; /* Fond blanc pur ! */
+  border: none; /* Plus de bordure grise */
+  border-radius: 12px; /* Coins plus doux */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); /* Ombre subtile */
+  overflow: hidden; /* Important pour le radius */
+  transition: all 0.3s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* --- En-tête colorée selon la catégorie --- */
 .category-header {
-  background: linear-gradient(90deg, #565d5f, #2e3033);
-  letter-spacing: 1px;
+  background: #34495e; /* Fond couleur accent (fini le gradient) */
+  color: #ffffff;
+  padding: 15px 0;
 }
 
+
 .body {
-  background-color: #4b4e53;
+  background-color: #ffffff; /* Le corps est blanc aussi */
+  padding: 20px;
 }
 
 /* --- Animation d’apparition des cards --- */

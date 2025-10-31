@@ -38,6 +38,48 @@
             "menuEnfant": { "name": "Kids Menu", "description": "Main + Dessert + Drink (juice or soda)" },
             "menuGourmet": { "name": "Gourmet Menu", "description": "Chef’s refined selection" },
             "menuDegustation": { "name": "Tasting Menu", "description": "5 courses paired with wine" }
+        },
+        "entrees": "Starters",
+        "plats": "Main Courses",
+        "desserts": "Desserts",
+        "boissons": "Drinks",
+        "menus": "Set Menus"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "A question, a reservation or want to join the team?",
+        "form": {
+        "objet": {
+            "label": "Subject of your message",
+            "reservation": "Book a table",
+            "application": "Apply for a job"
+        },
+        "nom": {
+            "label": "Full Name",
+            "error": "Name is required."
+        },
+        "email": {
+            "label": "Email",
+            "error": "A valid email is required."
+        },
+        "telephone": {
+            "label": "Phone Number",
+            "error": "Phone number is required."
+        },
+        "message": "Message (optional)",
+        "reservation": {
+            "title": "Reservation Details",
+            "date": "Date",
+            "heure": "Time",
+            "personnes": "Number of guests"
+        },
+        "application": {
+            "title": "Your Application",
+            "poste": "Desired Position",
+            "postePlaceholder": "E.g.: Waiter, Chef...",
+            "cv": "Your CV (PDF, Word)"
+        },
+        "submit": "Send"
         }
     }
 }

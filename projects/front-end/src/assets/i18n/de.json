@@ -38,6 +38,48 @@
             "menuEnfant": { "name": "Kinder-Menü", "description": "Hauptgericht + Dessert + Getränk (Saft oder Limonade)" },
             "menuGourmet": { "name": "Gourmet-Menü", "description": "Ausgewählte Spezialitäten des Küchenchefs" },
             "menuDegustation": { "name": "Degustationsmenü", "description": "5-Gänge-Menü mit Weinbegleitung" }
+        },
+        "entrees": "Vorspeisen",
+        "plats": "Hauptgerichte",
+        "desserts": "Desserts",
+        "boissons": "Getränke",
+        "menus": "Menüs"
+    },
+    "contact": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Eine Frage, eine Reservierung oder möchten Sie dem Team beitreten?",
+        "form": {
+        "objet": {
+            "label": "Betreff Ihrer Nachricht",
+            "reservation": "Tisch reservieren",
+            "application": "Sich bewerben"
+        },
+        "nom": {
+            "label": "Vollständiger Name",
+            "error": "Name ist erforderlich."
+        },
+        "email": {
+            "label": "E-Mail",
+            "error": "Eine gültige E-Mail ist erforderlich."
+        },
+        "telephone": {
+            "label": "Telefonnummer",
+            "error": "Telefonnummer ist erforderlich."
+        },
+        "message": "Nachricht (optional)",
+        "reservation": {
+            "title": "Reservierungsdetails",
+            "date": "Datum",
+            "heure": "Uhrzeit",
+            "personnes": "Anzahl der Personen"
+        },
+        "application": {
+            "title": "Ihre Bewerbung",
+            "poste": "Gewünschte Position",
+            "postePlaceholder": "Z.B.: Service, Küche...",
+            "cv": "Ihr Lebenslauf (PDF, Word)"
+        },
+        "submit": "Senden"
         }
     }
 }

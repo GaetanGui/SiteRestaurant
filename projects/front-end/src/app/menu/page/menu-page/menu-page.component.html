@@ -20,7 +20,7 @@
         *ngFor="let category of availableCategories"
         (click)="onSelectCategory(category)"
         class="btn filter-btn"
-        [class.active]="category === selectedCategoryName"> {{ category }}
+        [class.active]="category === selectedCategoryName"> {{'menu.' + category | latinise | lowercase | translate }}
       </button>
   </div>
 

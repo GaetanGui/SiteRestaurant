@@ -2,11 +2,12 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, EventEmitter, HostListener, Inject, Input, Output, PLATFORM_ID } from '@angular/core';
 import "../../../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { MenuItemType } from '../../types/menu-type';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'tgam-menu-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './menu-item.component.html',
   styleUrl: './menu-item.component.css'
 })
@@ -22,12 +23,13 @@ export class MenuItemComponent {
   @Input() description = '';
   @Input() price = 0;
   @Input() image = '';
+  @Input() isMenu: boolean = false;
   @Output() openImage = new EventEmitter<string>();
+  @Output() openDetail = new EventEmitter<string>();
 
   onImageClick(url: string) {
     this.openImage.emit(url);
   }
-
 
   constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -38,7 +40,6 @@ export class MenuItemComponent {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               this.el.nativeElement.querySelector('.fade-in').classList.add('show');
-              console.log(this.el.nativeElement)
               observer.unobserve(entry.target);
             }
           });

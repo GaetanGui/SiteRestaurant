@@ -1,8 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { LowerCasePipe, NgFor, NgIf } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { Dish } from '../../types/dish.model';
 import { CategoryCardComponent } from '../../components/category-card-component/category-card-component.component';
+import { NgPipesModule } from 'ngx-pipes';
 
 interface GroupedCategory {
   name: string;
@@ -12,7 +13,7 @@ interface GroupedCategory {
 @Component({
   selector: 'tgam-menu-page',
   standalone: true,
-  imports: [CategoryCardComponent, NgFor, NgIf, TranslateModule],
+  imports: [CategoryCardComponent, NgFor, NgIf, TranslateModule, LowerCasePipe, NgPipesModule],
   templateUrl: './menu-page.component.html',
   styleUrl: './menu-page.component.css'
 })
@@ -58,6 +59,8 @@ export class MenuPageComponent {
   public groupedCategories: GroupedCategory[] = [];
 
   public availableCategories: string[] = [];
+
+  private dishMenus: Dish[] = [];
   
   // --- MODIFICATIONS ---
 

@@ -1,8 +1,9 @@
-import { NgFor, NgIf } from '@angular/common';
+import { LowerCasePipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
 import { Dish } from '../../types/dish.model';
+import { NgPipesModule } from 'ngx-pipes';
 
 @Component({
   selector: 'tgam-category-card-component',
@@ -10,7 +11,9 @@ import { Dish } from '../../types/dish.model';
   imports: [
     NgFor, 
     TranslateModule, 
-    MenuItemComponent // Il faut importer le composant enfant ici
+    MenuItemComponent,
+    LowerCasePipe,
+    NgPipesModule 
   ],
   templateUrl: './category-card-component.component.html',
   styleUrl: './category-card-component.component.css'
