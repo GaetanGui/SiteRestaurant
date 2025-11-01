@@ -19,18 +19,7 @@
     display: flex; 
     align-items: center; 
     height: 70px; 
-}
-
-tgam-gjt-button .style-btn {
-  background-color: transparent; /* Fond transparent */
-  color: #f5f7fa; /* Texte clair */
-  margin: 0 5px; /* Moins de marge */
-  padding: 10px 15px;
-  border: none;
-}
-tgam-gjt-button .style-btn:hover {
-  background-color: #34495e; /* Léger fond au survol */
-  border-radius: 8px;
+    justify-content: center;
 }
 
 .logo{
@@ -44,9 +33,14 @@ tgam-gjt-button .style-btn:hover {
     margin-left: 20px;
 }
 .buttonBar{
-    display: inline;
+    display: flex; /* <-- ÉTAIT 'display: block;' */
+    align-items: center;
+    gap: 5px; /* Espace entre les icônes */}
+.buttons{
+    display: flex;
+    align-items: center;
+    /*gap: 10px;*/
 }
-
 .menu-container {
     position: relative;
     display: inline-block; 

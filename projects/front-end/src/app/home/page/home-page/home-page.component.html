@@ -12,7 +12,7 @@
             routerLink="/menu">
         </tgam-gjt-button>
     </div>
-    <div class="hero-info-overlay">
+    <div class="hero-info-overlay" *ngIf="responsive.isWeb$">
         <div class="hero-info-content ml-2">
             <div class="info-col">
                 <h4 class="info-title">{{ 'home.horaires.title' | translate }}</h4>

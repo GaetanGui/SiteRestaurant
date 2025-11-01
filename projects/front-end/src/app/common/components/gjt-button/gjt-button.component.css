@@ -39,7 +39,8 @@
 
 .style-btn.btn-small {
   font-size: 16px;
-  padding: 10px;
+  padding: 5px;
+  margin: 10px;
 }
 
 .style-btn.btn-large {
