@@ -8,13 +8,13 @@
         <div class="card-body text-center">
             <h2 class="card-title fw-bold text-dark">{{ dishName }}</h2>
             <p class="card-text text-muted small">{{ description }}</p>
-            <p class="text-primary fw-semibold fs-5">{{ price | currency:'EUR' }}</p>
+            <p class="text-primary fw-semibold fs-5" *ngIf="price !== 0">{{ price | currency:'EUR' }}</p>
         </div>
     </div>
 </div>
 
 <div class="fade-in" *ngIf="isMenu" >
-    <a routerLink="/menu/detail">
+    <a [routerLink]="['/menu/detail', key]">
         <div class="card shadow-sm border-0 h-100">
             <img [src]="image"
                 class="card-img-top img-fluid rounded-top"

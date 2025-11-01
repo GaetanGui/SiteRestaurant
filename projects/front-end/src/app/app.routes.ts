@@ -20,7 +20,7 @@ export const routes: Routes = [
         component: MenuPageComponent
     },
     {
-        path: 'menu/detail',
+        path: 'menu/detail/:id',
         component: MenuDetailPageComponent
     },
     {

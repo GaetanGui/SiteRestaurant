@@ -1,0 +1,101 @@
+/* Fond gris de la charte graphique */
+:host {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu-detail-container {
+  max-width: 1200px;
+  margin-top: 90px;
+}
+
+/* Titres */
+.text-primary {
+  color: #2c3e50 !important; /* Bleu-gris foncé */
+}
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+/* * Styles pour nos cartes "maison"
+ * (Basés sur la charte "Minimaliste Élégant")
+*/
+.choice-card {
+  background-color: #ffffff; /* Fond blanc */
+  border: none;
+  border-radius: 12px; /* Coins arrondis */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); /* Ombre douce */
+  overflow: hidden;
+}
+
+/* En-tête de la carte (Entrées, Plats...) */
+.choice-header {
+  background: #34495e; /* Accent bleu pétrole */
+  color: #ffffff;
+  padding: 15px 0;
+}
+
+.choice-card .body {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* * Layout pour le "OU" (A ou B)
+*/
+.choice-body {
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  align-items: center; 
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Passe à la ligne sur mobile */
+}
+
+/* Les composants de plat prennent 50% de l'espace */
+.choice-body tgam-menu-item {
+  flex: 1; 
+  min-width: 300px; /* Taille minimale avant de passer à la ligne */
+}
+
+/* Style du "OU" */
+.choice-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50px; /* Espace fixe pour le "OU" */
+}
+
+.choice-divider span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #34495e; /* Couleur accent */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* * Styles pour l'overlay d'image
+*/
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+}
+
+.enlarged-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}

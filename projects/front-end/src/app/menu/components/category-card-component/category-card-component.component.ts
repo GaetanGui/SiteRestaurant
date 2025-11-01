@@ -1,4 +1,4 @@
-import { LowerCasePipe, NgFor, NgIf } from '@angular/common';
+import { LowerCasePipe, NgFor, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
@@ -13,7 +13,7 @@ import { NgPipesModule } from 'ngx-pipes';
     TranslateModule, 
     MenuItemComponent,
     LowerCasePipe,
-    NgPipesModule 
+    NgPipesModule
   ],
   templateUrl: './category-card-component.component.html',
   styleUrl: './category-card-component.component.css'

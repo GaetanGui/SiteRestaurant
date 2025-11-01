@@ -23,6 +23,7 @@ export class MenuItemComponent {
   @Input() description = '';
   @Input() price = 0;
   @Input() image = '';
+  @Input() key: string = '';
   @Input() isMenu: boolean = false;
   @Output() openImage = new EventEmitter<string>();
   @Output() openDetail = new EventEmitter<string>();
