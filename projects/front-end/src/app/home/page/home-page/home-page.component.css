@@ -51,3 +51,116 @@
     --button-border-radius: 5px;
     font-weight: bold;
 }
+
+.hero-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0 30px 0; /* Espace pour le texte */
+
+  /* LE DÉGRADÉ "SCRIM" :
+     C'est la couleur bleu-gris foncé de ta charte (#2c3e50)
+     qui s'estompe vers le transparent.
+  */
+  background: linear-gradient(
+    to top, 
+    rgba(44, 62, 80, 0.9) 20%,  /* Opaque à 90% en bas */
+    rgba(44, 62, 80, 0.7) 60%, 
+    transparent 100%
+  );
+
+  /* Style du texte par défaut */
+  color: #ffffff;
+}
+
+/* 3. Centre le contenu et le met en colonnes */
+.hero-info-content {
+  display: flex;
+  justify-content: center; /* Centre les colonnes */
+  gap: 40px; /* Espace entre les colonnes */
+  max-width: 900px; /* Limite la largeur */
+  margin: 0 auto;
+  text-align: left;
+  flex-wrap: wrap; /* Passe à la ligne sur mobile */
+  padding: 0 15px; /* Évite de coller aux bords sur mobile */
+}
+
+.info-col {
+  flex: 1; /* Les colonnes partagent l'espace */
+  min-width: 300px; /* Taille minimale avant de passer à la ligne */
+}
+
+/* 4. Style du texte (discret et élégant) */
+.info-title {
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  /* Ligne de séparation subtile */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4); 
+}
+
+.info-title.stacked {
+  margin-top: 20px; /* Espace entre service et paiements */
+}
+
+.info-col p {
+  margin: 0;
+  font-size: 0.9rem; /* 14.4px */
+  line-height: 1.6;
+}
+
+.info-col .info-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.info-list .ferme {
+  color: #ffcdd2; 
+  font-weight: 500;
+}
+
+/* 5. Le conteneur de la flèche */
+.scroll-down-indicator {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;  /* Centre l'icône horizontalement */
+  background-color: transparent; /* Pas de fond */
+}
+
+/* 6. La flèche (TAILLE CORRIGÉE) */
+.animated-arrow {
+  color: #ffffff; /* Flèche blanche sur le dégradé */
+  font-size: 1.8rem; /* TAILLE RÉDUITE */
+  cursor: pointer;
+  opacity: 0.7; /* Plus subtile */
+  transition: all 0.3s ease;
+}
+
+.animated-arrow:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 7. L'animation de rebond */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Monte */
+  }
+  60% {
+    transform: translateY(-5px); /* Descend un peu moins */
+  }
+}
+
+.animated-arrow {
+  animation: bounce 2s infinite; /* Applique l'animation en boucle */
+}

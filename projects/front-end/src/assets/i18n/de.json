@@ -2,7 +2,19 @@
     "home" : {
         "title": "Le Point D'Orgues",
         "description": "Hausgemachte Küche aus regionalen Produkten",
-        "ctaButton": "Unsere Saisonkarte"        
+        "ctaButton": "Unsere Saisonkarte",
+        "horaires": {
+            "title": "Öffnungszeiten",
+            "lun-jeu-dim": "Mo, Do, So: 10:00 - 15:00 Uhr",
+            "ven-sam": "Fr, Sa: 10:00 - 15:00 / 18:00 - 22:00 Uhr",
+            "mar-mer": "Dienstag, Mittwoch:",
+            "ferme": "Geschlossen",
+            "serviceTitle": "Küchenzeiten"
+        },
+        "paiements": {
+            "title": "Akzeptierte Zahlungen",
+            "list": "Kreditkarte, Schecks, Bargeld, Urlaubsschecks"
+        }       
     },
     "topBar" : {
         "homeBtn": "Startseite",

@@ -86,10 +86,7 @@ export class MenuPageComponent {
       };
     });
 
-    // 3. Sélectionner la première catégorie par défaut (s'il y en a une)
-    if (this.availableCategories.length > 0) {
-      this.onSelectCategory(this.availableCategories[0]);
-    }
+
   }
   onClearFilter() {
     this.selectedCategoryName = undefined;

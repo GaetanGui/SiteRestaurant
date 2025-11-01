@@ -2,7 +2,19 @@
     "home" : {
         "title": "Le Point D'Orgues",
         "description": "Homemade cuisine crafted from local products",
-        "ctaButton": "Our seasonal menu"        
+        "ctaButton": "Our seasonal menu",
+        "horaires": {
+            "title": "Opening Hours",
+            "lun-jeu-dim": "Mon, Thu, Sun: 10am - 3pm",
+            "ven-sam": "Fri, Sat: 10am - 3pm / 6pm - 10pm",
+            "mar-mer": "Tuesday, Wednesday:",
+            "ferme": "Closed",
+            "serviceTitle": "Kitchen Service Hours"
+        },
+        "paiements": {
+            "title": "Accepted Payments",
+            "list": "Credit Card, Cheques, Cash, Holiday Vouchers"
+        }  
     },
     "topBar" : {
         "homeBtn": "Home",

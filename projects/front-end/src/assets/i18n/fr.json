@@ -2,7 +2,19 @@
     "home" : {
         "title": "Le Point D'Orgues",
         "description": "Cuisine faite maison élaborée à partir de produits locaux",
-        "ctaButton": "Notre carte du moment"        
+        "ctaButton": "Notre carte du moment",
+        "horaires": {
+            "title": "Horaires d'Ouverture",
+            "lun-jeu-dim": "Lundi, Jeudi, Dimanche: 10h - 15h",
+            "ven-sam": "Vendredi, Samedi: 10h - 15h / 18h - 22h",
+            "mar-mer": "Mardi, Mercredi:",
+            "ferme": "Fermé",
+            "serviceTitle": "Horaires de service"
+        },
+        "paiements": {
+            "title": "Règlements acceptés",
+            "list": "CB, Chèques, Espèces, Chèques Vacances"
+        }    
     },
     "topBar" : {
         "homeBtn": "Acceuil",
@@ -82,4 +94,5 @@
         "submit": "Envoyer"
         }
     }
+    
 }
