@@ -3,6 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GjtButtonComponent } from '../../../common/components/gjt-button/gjt-button.component';
 import { RouterLink } from '@angular/router';
 import { ResponsiveService } from '../../../common/services/responsive.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'tgam-home-page',
@@ -10,8 +11,9 @@ import { ResponsiveService } from '../../../common/services/responsive.service';
   imports: [
     TranslateModule,
     GjtButtonComponent,
-    RouterLink
-  ],
+    RouterLink,
+    NgIf
+],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
