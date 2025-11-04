@@ -6,7 +6,7 @@
   display: block;
   width: 100%;
   min-height: 100vh;
-  background-color: #f5f7fa; /* Le fond gris clair de la charte */
+  /*background-color: #f5f7fa;  Le fond gris clair de la charte */
   padding: 40px 15px; /* Aération en haut/bas et sur les côtés */
   box-sizing: border-box;
 }

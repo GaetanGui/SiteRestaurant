@@ -1,0 +1,108 @@
+/* 1. La carte principale (fond blanc, ombre, etc.) */
+.info-card {
+  display: flex; /* La clé ! Image et texte côte à côte */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Important pour les coins de l'image */
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajout d'une transition */
+}
+
+/* Ajout d'un effet au survol */
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Colonne Image */
+.info-card-image {
+  flex: 0 0 55%; /* L'image prend 40% de la largeur */
+  min-height: 250px;
+}
+
+.info-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3. Colonne Contenu (padding augmenté) */
+.info-card-content {
+  flex: 1; 
+  padding: 40px; /* Augmentation du padding pour plus d'aération */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4. Titre (plus grand, plus espacé) */
+.info-title {
+  color: #2c3e50; /* Couleur sombre (charte) */
+  font-weight: 700;
+  font-size: 1.8rem; /* Plus grand */
+  margin: 0 0 8px 0; /* Marge ajustée */
+  letter-spacing: 0.5px;
+}
+
+/* 5. Sous-titre (couleur accent, plus grand) */
+.info-subtitle {
+  color: #34495e; /* Couleur accent (bleu pétrole) */
+  font-size: 1.1rem; /* Plus grand */
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 20px 0; /* Espace augmenté */
+  line-height: 1.4;
+  margin-top: 15px;
+}
+
+/* 6. Texte principal (plus lisible) */
+.info-text {
+  color: #555;
+  line-height: 1.8; /* Plus aéré */
+  font-size: 0.95rem; /* Plus grand */
+  flex-grow: 1; /* Pousse le bouton vers le bas */
+  white-space: pre-line;
+  margin-top: 40px;
+}
+
+/* 7. Bouton (style "accent") */
+.info-button {
+  display: inline-block;
+  background-color: #34495e; /* Couleur accent (charte) */
+  color: #ffffff;
+  padding: 12px 25px; /* Bouton un peu plus grand */
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 25px; /* Espace au-dessus */
+  transition: background-color 0.3s ease;
+  align-self: flex-start; /* Aligne le bouton à gauche */
+}
+
+.info-button:hover {
+  background-color: #2c3e50; /* Accent plus foncé */
+}
+
+/* 5. Responsivité (inchangée) */
+@media (max-width: 992px) {
+  /* Sur tablettes et mobiles, on passe en colonne */
+  .info-card {
+    flex-direction: column;
+  }
+  
+  .info-card-image {
+    width: 100%;
+    flex-basis: 250px; /* Hauteur fixe pour l'image */
+  }
+
+  .info-card-content {
+    padding: 25px; /* Padding réduit sur mobile */
+  }
+
+  /* Centre le bouton sur mobile */
+  .info-button {
+    align-self: center;
+  }
+}

@@ -33,7 +33,7 @@
 
 .text {
     font-family: 'Montserrat', sans-serif; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
     font: 5em sans-serif;
 }
 
@@ -51,7 +51,10 @@
     --button-border-radius: 5px;
     font-weight: bold;
 }
-
+.services-section {
+  /* Repose sur le fond gris de ton :host ou body */
+  background-color: transparent; 
+}
 .hero-info-overlay {
   position: absolute;
   bottom: 0;

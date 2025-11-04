@@ -1,42 +1,57 @@
-<div class="hero-section">
 
-    <div class="hero-overlay"></div> 
+<div>
+    <div class="hero-section">
 
-    <div class="container">
-        <h1 class="text">{{ 'home.title' | translate}}</h1>
-        <h2 class="text description">{{ 'home.description' | translate}}</h2>
-        
-        <tgam-gjt-button 
-            class="hero-cta-button"
-            [label]="'home.ctaButton' | translate" 
-            routerLink="/menu">
-        </tgam-gjt-button>
-    </div>
-    <div class="hero-info-overlay" *ngIf="responsive.isWeb$">
-        <div class="hero-info-content ml-2">
-            <div class="info-col">
-                <h4 class="info-title">{{ 'home.horaires.title' | translate }}</h4>
-                <ul class="info-list">
-                    <li>{{ 'home.horaires.lun-jeu-dim' | translate }}</li>
-                    <li>{{ 'home.horaires.ven-sam' | translate }}</li>
-                    <li>
-                        {{ 'home.horaires.mar-mer' | translate }}
-                        <span class="ferme">{{ 'home.horaires.ferme' | translate }}</span>
-                    </li>
-                </ul>
+        <div class="hero-overlay"></div> 
+
+        <div class="container">
+            <h1 class="text">{{ 'home.title' | translate}}</h1>
+            <h2 class="text description">{{ 'home.description' | translate}}</h2>
+            
+            <tgam-gjt-button 
+                class="hero-cta-button"
+                [label]="'home.ctaButton' | translate" 
+                routerLink="/menu">
+            </tgam-gjt-button>
+        </div>
+        <div class="hero-info-overlay" *ngIf="responsive.isWeb$ | async">
+            <div class="hero-info-content ml-2">
+                <div class="info-col">
+                    <h4 class="info-title">{{ 'home.horaires.title' | translate }}</h4>
+                    <ul class="info-list">
+                        <li>{{ 'home.horaires.lun-jeu-dim' | translate }}</li>
+                        <li>{{ 'home.horaires.ven-sam' | translate }}</li>
+                        <li>
+                            {{ 'home.horaires.mar-mer' | translate }}
+                            <span class="ferme">{{ 'home.horaires.ferme' | translate }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-col">
+                    <h4 class="info-title">{{ 'home.horaires.serviceTitle' | translate }}</h4>
+                    <p>12h - 13h45 / 19h - 20h45</p>
+                    
+                    <h4 class="info-title stacked">{{ 'home.paiements.title' | translate }}</h4>
+                    <p>{{ 'home.paiements.list' | translate }}</p>
+                </div>
             </div>
-
-            <div class="info-col">
-                <h4 class="info-title">{{ 'home.horaires.serviceTitle' | translate }}</h4>
-                <p>12h - 13h45 / 19h - 20h45</p>
-                
-                <h4 class="info-title stacked">{{ 'home.paiements.title' | translate }}</h4>
-                <p>{{ 'home.paiements.list' | translate }}</p>
+            <div class="scroll-down-indicator">
+                <i class="fas fa-chevron-down animated-arrow"></i>
             </div>
         </div>
-        <div class="scroll-down-indicator">
-            <i class="fas fa-chevron-down animated-arrow"></i>
+    </div>
+    <div class="services-section">
+    <div class="container py-5">
+        
+        <div class="services-grid">
+
+        <tgam-home-item
+            [cardData]="item1">
+        </tgam-home-item>
+
         </div>
     </div>
 </div>
+
 

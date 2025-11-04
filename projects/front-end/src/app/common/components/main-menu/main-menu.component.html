@@ -1,5 +1,5 @@
 <div class="background">
-    <div class="ul">
+    <div [ngClass]="(responsive.isMobile$ | async) ? 'ulMobile' : 'ul'">
 
         <a routerLink="/home" *ngIf="!(responsive.isMobile$ | async)">
             <div class="logo"></div>

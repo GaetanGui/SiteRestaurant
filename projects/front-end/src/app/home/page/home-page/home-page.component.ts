@@ -3,7 +3,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GjtButtonComponent } from '../../../common/components/gjt-button/gjt-button.component';
 import { RouterLink } from '@angular/router';
 import { ResponsiveService } from '../../../common/services/responsive.service';
-import { NgIf } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { HomeItemComponent, HomeItemData } from '../../components/home-item/home-item.component';
 
 @Component({
   selector: 'tgam-home-page',
@@ -12,7 +13,9 @@ import { NgIf } from '@angular/common';
     TranslateModule,
     GjtButtonComponent,
     RouterLink,
-    NgIf
+    NgIf,
+    AsyncPipe,
+    HomeItemComponent
 ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
@@ -20,4 +23,13 @@ import { NgIf } from '@angular/common';
 export class HomePageComponent {
   constructor(public responsive: ResponsiveService) {
   }
+
+  item1: HomeItemData = {
+    imageUrl: "/assets/images/barTerrasse.jpg",
+    subtitleKey: "home.features.terrasse.subtitle",
+    titleKey: "home.features.terrasse.title",
+    textKey: "home.features.terrasse.text",
+    textKey2: "home.features.terrasse.text2"
+  }
+ 
 }

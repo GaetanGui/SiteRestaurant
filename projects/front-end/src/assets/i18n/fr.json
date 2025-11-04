@@ -14,7 +14,26 @@
         "paiements": {
             "title": "Règlements acceptés",
             "list": "CB, Chèques, Espèces, Chèques Vacances"
-        }    
+        },
+        "features": {
+            "menus": {
+                "title": "Nos Menus et Formules",
+                "subtitle": "Cuisine 100% faite maison.",
+                "text": "Nous vous proposons un menu du jour à 14,50€ les midis du lundi au vendredi. Le soir et weekend, venez découvrir nos formules à partir de 21€ !",
+                "button": "Voir la carte"
+            },
+            "vins": {
+                "title": "Cave à Vins & Bières",
+                "subtitle": "Nos producteurs locaux mis à l'honneur.",
+                "text": "Venez découvrir nos vignerons et nos brasseurs locaux et leurs excellent produits. Il y en a pour tous les palais !"
+            },
+            "terrasse": {
+                "title": "Bar & Terrasse",
+                "subtitle": "Cocktails et Vue Panoramique.",
+                "text": "Venez profiter d'un moment de paix et au calme sur notre terrasse panoramique pour déguster un cocktail maison ! \n\n\n Chemin d'accès à la rivière piste cyclable, bouldrôme à proximité.",
+                "button": "Réserver"
+            }    
+        }
     },
     "topBar" : {
         "homeBtn": "Acceuil",
