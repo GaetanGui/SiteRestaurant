@@ -1,17 +1,15 @@
 <div class="container py-5 menu-container">
   
   <h2 class="text-center mb-5 mt-5 fw-bold text-uppercase marginn">
-    {{ 'menu.title' | translate }}
+    {{ 'menu.title' | translate}}
   </h2>
-
-
 
   <div class="filter-bar text-center mb-4">
 
       <button 
         (click)="onClearFilter()"
         class="btn filter-btn icon-btn"
-        [class.active]="selectedCategoryName === null"
+        [class.active]="selectedCategoryId === null" 
         aria-label="Effacer le filtre">
         <i class="fa-solid fa-filter-circle-xmark"></i>
       </button>
@@ -20,15 +18,16 @@
         *ngFor="let category of availableCategories"
         (click)="onSelectCategory(category)"
         class="btn filter-btn"
-        [class.active]="category === selectedCategoryName"> {{'menu.' + category | latinise | lowercase | translate }}
+        [class.active]="category.categoryId === selectedCategoryId">
+        {{ category.name }}
       </button>
   </div>
 
   <div class="row g-4" *ngIf="!activeCategory">
-    <div class="col-12" *ngFor="let group of groupedCategories">
+    <div class="col-12" *ngFor="let cat of allCategories">
       <tgam-category-card-component
-        [title]="group.name"
-        [dishes]="group.dishes"
+        [title]="cat.name  "
+        [dishes]="cat.dishes"
         (openImage)="openImage($event)">
       </tgam-category-card-component>
     </div>

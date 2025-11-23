@@ -3,79 +3,79 @@
   <div class="container py-5 menu-detail-container">
 
     <h2 class="text-center mb-5 fw-bold text-uppercase text-primary">
-      {{ (menuKey + '.name') | translate }}
+      {{ (menuKey + '.name')   }}
     </h2>
-    <p class="text-center description">{{ (menuKey + '.description') | translate }}</p>
+    <p class="text-center description">{{ (menuKey + '.description')   }}</p>
 
     <div class="card choice-card shadow-lg border-0 mb-4">
       <div class="card-header choice-header text-center text-white py-3">
-        <h3 class="mb-0 fw-bold text-uppercase">{{ 'entrees' | translate }}</h3>
+        <h3 class="mb-0 fw-bold text-uppercase">{{ 'entrees' }}</h3>
       </div>
       <div class="card-body body choice-body">
         
         <tgam-menu-item *ngIf="choixEntrees[0]"
           (openImage)="openImage($event)"
-          [dishName]="(choixEntrees[0].key + '.name') | translate"
-          [description]="(choixEntrees[0].key + '.description') | translate"
+          [dishName]="choixEntrees[0].name"
+          [description]="choixEntrees[0].description"
 
-          [image]="choixEntrees[0].image">
+          [image]="choixEntrees[0].imageUrl">
         </tgam-menu-item>
 
         <div class="choice-divider"><span>OU</span></div>
 
         <tgam-menu-item *ngIf="choixEntrees[1]"
           (openImage)="openImage($event)"
-          [dishName]="(choixEntrees[1].key + '.name') | translate"
-          [description]="(choixEntrees[1].key + '.description') | translate"
-          [image]="choixEntrees[1].image">
+          [dishName]="choixEntrees[1].name"
+          [description]="choixEntrees[1].description"
+          [image]="choixEntrees[1].imageUrl">
         </tgam-menu-item>
       </div>
     </div>
 
     <div class="card choice-card shadow-lg border-0 mb-4">
       <div class="card-header choice-header text-center text-white py-3">
-        <h3 class="mb-0 fw-bold text-uppercase">{{ 'plats' | translate }}</h3>
+        <h3 class="mb-0 fw-bold text-uppercase">{{ 'plats'   }}</h3>
       </div>
       <div class="card-body body choice-body">
         
         <tgam-menu-item *ngIf="choixPlats[0]"
           (openImage)="openImage($event)"
-          [dishName]="(choixPlats[0].key + '.name') | translate"
-          [description]="(choixPlats[0].key + '.description') | translate"
-          [image]="choixPlats[0].image">
+          [dishName]="choixPlats[0].name"
+          [description]="choixPlats[0].description"
+          [image]="choixPlats[0].imageUrl">
         </tgam-menu-item>
 
         <div class="choice-divider"><span>OU</span></div>
 
         <tgam-menu-item *ngIf="choixPlats[1]"
           (openImage)="openImage($event)"
-          [dishName]="(choixPlats[1].key + '.name') | translate"
-          [description]="(choixPlats[1].key + '.description') | translate"
-          [image]="choixPlats[1].image">
+          [dishName]="choixPlats[1].name"
+          [description]="choixPlats[1].description"
+          [image]="choixPlats[1].imageUrl">
         </tgam-menu-item>
       </div>
     </div>
 
     <div class="card choice-card shadow-lg border-0 mb-4">
       <div class="card-header choice-header text-center text-white py-3">
-        <h3 class="mb-0 fw-bold text-uppercase">{{ 'desserts' | translate }}</h3>
+        <h3 class="mb-0 fw-bold text-uppercase">{{ 'desserts'   }}</h3>
       </div>
       <div class="card-body body choice-body">
         
         <tgam-menu-item *ngIf="choixDesserts[0]"
           (openImage)="openImage($event)"
-          [dishName]="(choixDesserts[0].key + '.name') | translate"
-          [description]="(choixDesserts[0].key + '.description') | translate"
-          [image]="choixDesserts[0].image">
+          [dishName]="choixDesserts[0].name"
+          [description]="choixDesserts[0].description"
+          [image]="choixDesserts[0].imageUrl">
         </tgam-menu-item>
 
         <div class="choice-divider"><span>OU</span></div>
 
         <tgam-menu-item *ngIf="choixDesserts[1]"
           (openImage)="openImage($event)"
-          [dishName]="(choixDesserts[1].key + '.name') | translate"
-          [description]="(choixDesserts[1].key + '.description') | translate"
-          [image]="choixDesserts[1].image">
+          [dishName]="choixDesserts[1].name"
+          [description]="choixDesserts[1].description"
+          [image]="choixDesserts[1].imageUrl">
         </tgam-menu-item>
       </div>
     </div>

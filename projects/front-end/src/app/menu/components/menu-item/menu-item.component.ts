@@ -1,7 +1,6 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, EventEmitter, HostListener, Inject, Input, Output, PLATFORM_ID } from '@angular/core';
 import "../../../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import { MenuItemType } from '../../types/menu-type';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -12,13 +11,6 @@ import { RouterLink } from "@angular/router";
   styleUrl: './menu-item.component.css'
 })
 export class MenuItemComponent {
-  // @Input() data: MenuItemType = {
-  //   text: '',
-  //   name: '',
-  //   image: '',
-  //   isImgPositionRight: false,
-  //   price: ''
-  // };
   @Input() dishName = '';
   @Input() description = '';
   @Input() price = 0;

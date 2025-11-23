@@ -1,9 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { LowerCasePipe, NgFor, NgIf } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Dish } from '../../types/dish.model';
 import { CategoryCardComponent } from '../../components/category-card-component/category-card-component.component';
 import { NgPipesModule } from 'ngx-pipes';
+import { MenuService } from '../../../services/menu.service';
+import { Category } from '../../types/category.model';
+import { Subscription } from 'rxjs';
 
 interface GroupedCategory {
   name: string;
@@ -19,6 +22,83 @@ interface GroupedCategory {
 })
 export class MenuPageComponent {
   selectedImage: string | null = null;
+
+  constructor(private menuService: MenuService, private translate: TranslateService) {}
+
+  private langChangeSubscription?: Subscription;
+
+// La liste complète reçue de l'API
+  public allCategories: Category[] = [];
+
+  // Liste des noms pour les boutons filtres
+  public availableCategories: Category[] = []; 
+
+  // La catégorie active affichée
+  public activeCategory?: Category;
+  
+  // L'ID de la catégorie sélectionnée (pour le style du bouton)
+  public selectedCategoryId: number | null = null;
+
+  ngOnInit() {
+    //this.groupDishes();
+    this.loadMenu();
+
+    this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.loadMenu(); 
+    });
+  }
+
+  loadMenu() {
+    this.menuService.getMenu().subscribe({
+      next: (data) => {
+        this.allCategories = data;
+        this.availableCategories = data;
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement du menu:', err);
+      }
+    });
+  }
+
+  /**
+   * Sélectionne une catégorie
+   */
+  onSelectCategory(category: Category) {
+    this.selectedCategoryId = category.categoryId;
+    this.activeCategory = category;
+  }
+
+  /**
+   * Efface le filtre
+   */
+  onClearFilter() {
+    this.selectedCategoryId = null;
+    this.activeCategory = undefined;
+  }
+
+  openImage(url: string) { this.selectedImage = url;}
+  closeImage() { this.selectedImage = null; }
+  
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscape(event: KeyboardEvent) {
+    this.closeImage();
+  }
+}
+
+
+
+/**
+// La liste complète reçue de l'API
+  private allCategories: Category[] = [];
+
+  // Liste des noms pour les boutons filtres
+  public availableCategories: Category[] = []; 
+
+  // La catégorie active affichée
+  public activeCategory?: Category;
+  
+  // L'ID de la catégorie sélectionnée (pour le style du bouton)
+  public selectedCategoryId: number | null = null;
 
   dishes: Dish[] = [
   { key: 'menu.dishes.bruchetta', price: 8.5, image: 'assets/images/bruschetta.png', category: 'Entrées' },
@@ -56,25 +136,7 @@ export class MenuPageComponent {
   { key: 'menu.dishes.menuDegustation', price: 34.9, image: 'assets/images/menu_degustation.jpg', category: 'Menus' }
   ];
 
-  public groupedCategories: GroupedCategory[] = [];
-
-  public availableCategories: string[] = [];
-
-  private dishMenus: Dish[] = [];
-  
-  // --- MODIFICATIONS ---
-
-  /** La catégorie (objet unique) actuellement affichée. */
-  public activeCategory?: GroupedCategory; // Plus une liste, mais un objet
-
-  /** Le nom de la catégorie sélectionnée (pour le style du bouton). */
-  public selectedCategoryName?: string;
-
-  ngOnInit() {
-    this.groupDishes();
-  }
-  
-  groupDishes() {
+groupDishes() {
     // 1. Obtenir les noms uniques des catégories (SANS 'Tous')
     this.availableCategories = Array.from(new Set(this.dishes.map(d => d.category)));
 
@@ -101,13 +163,8 @@ export class MenuPageComponent {
     this.activeCategory = this.groupedCategories.find(
       group => group.name === categoryName
     );
-  }
-
-  openImage(url: string) { this.selectedImage = url;}
-  closeImage() { this.selectedImage = null; }
+  } 
+    
   
-  @HostListener('document:keydown.escape', ['$event'])
-  onEscape(event: KeyboardEvent) {
-    this.closeImage();
-  }
-}
+  
+  */

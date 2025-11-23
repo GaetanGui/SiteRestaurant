@@ -27,15 +27,15 @@ export class MenuDetailPageComponent implements OnInit {
   choixDesserts: Dish[] = [];
 
   // Données "mock" (tu devrais les mettre dans un service !)
-  private allDishes: Dish[] = [
-    { key: 'menu.dishes.bruchetta', price: 8.5, image: 'assets/images/bruschetta.png', category: 'Entrées' },
-    { key: 'menu.dishes.soupeOignon', price: 7.9, image: 'assets/images/soupe_oignon.jpg', category: 'Entrées' },
-    { key: 'menu.dishes.burger', price: 14.9, image: 'assets/images/burger.png', category: 'Plats' },
-    { key: 'menu.dishes.pouletBasquaise', price: 16.5, image: 'assets/images/poulet_basquaise.jpg', category: 'Plats' },
-    { key: 'menu.dishes.tiramisu', price: 6.9, image: 'assets/images/tiramisu.png', category: 'Desserts' },
-    { key: 'menu.dishes.mousseChocolat', price: 6.5, image: 'assets/images/mousse_chocolat.jpeg', category: 'Desserts' },
-    // ... (tous tes autres plats)
-  ];
+  // private allDishes: Dish[] = [
+  //   { key: 'menu.dishes.bruchetta', price: 8.5, image: 'assets/images/bruschetta.png', category: 'Entrées' },
+  //   { key: 'menu.dishes.soupeOignon', price: 7.9, image: 'assets/images/soupe_oignon.jpg', category: 'Entrées' },
+  //   { key: 'menu.dishes.burger', price: 14.9, image: 'assets/images/burger.png', category: 'Plats' },
+  //   { key: 'menu.dishes.pouletBasquaise', price: 16.5, image: 'assets/images/poulet_basquaise.jpg', category: 'Plats' },
+  //   { key: 'menu.dishes.tiramisu', price: 6.9, image: 'assets/images/tiramisu.png', category: 'Desserts' },
+  //   { key: 'menu.dishes.mousseChocolat', price: 6.5, image: 'assets/images/mousse_chocolat.jpeg', category: 'Desserts' },
+  //   // ... (tous tes autres plats)
+  // ];
 
   constructor(private route: ActivatedRoute) { }
 
@@ -49,20 +49,20 @@ export class MenuDetailPageComponent implements OnInit {
 
   loadMenuChoices(menuKey: string) {
     // Logique pour définir les choix (à adapter)
-    if (menuKey === 'menu.dishes.menuClassique') {
-      this.choixEntrees = [
-        this.findDishByKey('menu.dishes.bruchetta'),
-        this.findDishByKey('menu.dishes.soupeOignon')
-      ];
-      this.choixPlats = [
-        this.findDishByKey('menu.dishes.burger'),
-        this.findDishByKey('menu.dishes.pouletBasquaise')
-      ];
-      this.choixDesserts = [
-        this.findDishByKey('menu.dishes.tiramisu'),
-        this.findDishByKey('menu.dishes.mousseChocolat')
-      ];
-    }
+    // if (menuKey === 'menu.dishes.menuClassique') {
+    //   this.choixEntrees = [
+    //     this.findDishByKey('menu.dishes.bruchetta'),
+    //     this.findDishByKey('menu.dishes.soupeOignon')
+    //   ];
+    //   this.choixPlats = [
+    //     this.findDishByKey('menu.dishes.burger'),
+    //     this.findDishByKey('menu.dishes.pouletBasquaise')
+    //   ];
+    //   this.choixDesserts = [
+    //     this.findDishByKey('menu.dishes.tiramisu'),
+    //     this.findDishByKey('menu.dishes.mousseChocolat')
+    //   ];
+    // }
     // else if (menuKey === '...') { ... }
 
     // Nettoie les "undefined" si un plat n'est pas trouvé
@@ -72,9 +72,9 @@ export class MenuDetailPageComponent implements OnInit {
   }
 
   // Helper pour trouver un plat
-  findDishByKey(key: string): Dish {
-    return this.allDishes.find(dish => dish.key === key)!;
-  }
+  // findDishByKey(key: string): Dish {
+  //   return this.allDishes.find(dish => dish.key === key)!;
+  // }
 
   // --- Logique pour l'overlay d'image ---
   selectedImage: string | null = null;

@@ -1,6 +1,8 @@
 export interface Dish {
-  key: string;
+  dishId: number;
+  name: string;        // <-- REMPLACE 'key'
+  description: string;
   price: number;
-  image: string;
-  category: string;
+  imageUrl: string;
+  categoryId: number;
 }
