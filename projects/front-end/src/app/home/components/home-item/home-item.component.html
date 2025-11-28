@@ -2,25 +2,25 @@
   
   <div class="info-card-image">
     <img [src]="cardData.imageUrl" 
-         [alt]="cardData.titleKey | translate">
+         [alt]="cardData.title">
   </div>
 
   <div class="info-card-content">
     
-    <h3 class="info-title">{{ cardData.titleKey | translate }}</h3>
+    <h3 class="info-title">{{ cardData.title }}</h3>
     
-    <h4 *ngIf="cardData.subtitleKey" class="info-subtitle">
-      {{ cardData.subtitleKey | translate }}
+    <h4 *ngIf="cardData.subtitle" class="info-subtitle">
+      {{ cardData.subtitle }}
     </h4>
     
     <p class="info-text">
-      {{ cardData.textKey | translate }}
+      {{ cardData.text }}
     </p>
     
-    <a *ngIf="cardData.buttonKey && cardData.buttonLink" 
+    <a *ngIf="cardData.buttonLabel && cardData.buttonLink" 
        [routerLink]="cardData.buttonLink" 
        class="info-button">
-      {{ cardData.buttonKey | translate }}
+      {{ cardData.buttonLabel }}
     </a>
 
   </div>

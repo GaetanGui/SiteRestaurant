@@ -2,16 +2,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-
-export interface HomeItemData {
-  imageUrl: string;
-  titleKey: string;
-  subtitleKey?: string; // Le sous-titre est optionnel
-  textKey: string;
-  textKey2?: string;
-  buttonKey?: string;   // Bouton optionnel
-  buttonLink?: string;  // Lien du bouton
-}
+import { HomeFeature } from '../../types/homeFeature.model';
 
 @Component({
   selector: 'tgam-home-item',
@@ -22,5 +13,5 @@ export interface HomeItemData {
 })
 
 export class HomeItemComponent {
-  @Input() cardData!: HomeItemData
+  @Input() cardData!: HomeFeature
 }

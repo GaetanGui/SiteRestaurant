@@ -42,16 +42,18 @@
         </div>
     </div>
     <div class="services-section">
-    <div class="container py-5">
-        
-        <div class="services-grid">
-
-        <tgam-home-item
-            [cardData]="item1">
-        </tgam-home-item>
-
+    
+    <div *ngFor="let feature of allFeatures">
+        <div class="container py-5">
+            <div class="services-grid">
+                <tgam-home-item
+                    [cardData]="feature">
+                </tgam-home-item>
+            </div>
         </div>
     </div>
+
+
 </div>
 
 

@@ -4,7 +4,7 @@ import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-transla
 import { Dish } from '../../types/dish.model';
 import { CategoryCardComponent } from '../../components/category-card-component/category-card-component.component';
 import { NgPipesModule } from 'ngx-pipes';
-import { MenuService } from '../../../services/menu.service';
+import { MenuService } from '../../../services/menu/menu.service';
 import { Category } from '../../types/category.model';
 import { Subscription } from 'rxjs';
 
