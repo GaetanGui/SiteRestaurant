@@ -19,18 +19,22 @@
                 <div class="info-col">
                     <h4 class="info-title">{{ 'home.horaires.title' | translate }}</h4>
                     <ul class="info-list">
-                        <li>{{ 'home.horaires.lun-jeu-dim' | translate }}</li>
-                        <li>{{ 'home.horaires.ven-sam' | translate }}</li>
-                        <li>
-                            {{ 'home.horaires.mar-mer' | translate }}
-                            <span class="ferme">{{ 'home.horaires.ferme' | translate }}</span>
+                        <li *ngFor="let hour of allHours" class="mb-2">
+                            <strong *ngIf="hour.day">{{ hour.day }} : </strong> 
+                            
+                            <span *ngIf="hour.status" class="ferme">{{ hour.status }}</span>
+                            
+                            <span *ngIf="!hour.status && hour.day">{{ hour.hours }}</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="info-col">
                     <h4 class="info-title">{{ 'home.horaires.serviceTitle' | translate }}</h4>
-                    <p>12h - 13h45 / 19h - 20h45</p>
+                    
+                    <p *ngIf="serviceHours">
+                        {{ serviceHours.hours }}
+                    </p>
                     
                     <h4 class="info-title stacked">{{ 'home.paiements.title' | translate }}</h4>
                     <p>{{ 'home.paiements.list' | translate }}</p>
@@ -41,19 +45,25 @@
             </div>
         </div>
     </div>
-    <div class="services-section">
-    
-    <div *ngFor="let feature of allFeatures">
-        <div class="container py-5">
-            <div class="services-grid">
-                <tgam-home-item
-                    [cardData]="feature">
-                </tgam-home-item>
+
+    <div class="service-grid">
+        <div class="services-section">
+        
+            <div class="container py-5">
+                <div *ngFor="let feature of allFeatures; let i = index" 
+                    class="full-width-section"
+                    [class.section-alt]="i % 2 !== 0"> 
+                        <div class="container">
+                            
+                            <tgam-home-item 
+                            [cardData]="feature">
+                            </tgam-home-item>
+
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-
-
 </div>
 
 

@@ -7,6 +7,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { MenuService } from '../../../services/menu/menu.service';
 import { Category } from '../../types/category.model';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 interface GroupedCategory {
   name: string;
@@ -23,7 +24,7 @@ interface GroupedCategory {
 export class MenuPageComponent {
   selectedImage: string | null = null;
 
-  constructor(private menuService: MenuService, private translate: TranslateService) {}
+  constructor(private menuService: MenuService, private translate: TranslateService, private route: ActivatedRoute ) {}
 
   private langChangeSubscription?: Subscription;
 
@@ -51,11 +52,34 @@ export class MenuPageComponent {
   loadMenu() {
     this.menuService.getMenu().subscribe({
       next: (data) => {
+        // 1. On stocke les données reçues
         this.allCategories = data;
         this.availableCategories = data;
+
+        // 2. --- LOGIQUE DE FILTRE ---
+        // On regarde si l'URL contient un paramètre (ex: /menu/boissons)
+        const filterParam = this.route.snapshot.paramMap.get('filter');
+
+        if (filterParam) {
+          const categoryToSelect = this.allCategories.find(c => c.name === filterParam);
+          
+          if (categoryToSelect) {
+            // Si trouvée, on la sélectionne
+            this.onSelectCategory(categoryToSelect);
+          } else {
+            // Si le filtre est inconnu (ex: /menu/toto), on met la défaut
+            this.onClearFilter();
+          }
+        } else {
+          // Pas de filtre dans l'URL -> comportement par défaut (ex: Entrées)
+          this.onClearFilter();
+        }
       },
       error: (err) => {
-        console.error('Erreur lors du chargement du menu:', err);
+        // Ta gestion d'erreur existante
+        if (err.status !== 0) {
+          console.error('Erreur lors du chargement du menu:', err);
+        }        
       }
     });
   }

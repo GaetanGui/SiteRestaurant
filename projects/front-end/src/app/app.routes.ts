@@ -15,6 +15,9 @@ export const routes: Routes = [
         path: 'home',
         component: HomePageComponent
     },
+    { 
+        path: 'menu/:filter', component: MenuPageComponent 
+    },
     {
         path: 'menu',
         component: MenuPageComponent

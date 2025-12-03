@@ -22,7 +22,7 @@
 
 .container {
     position: relative; 
-    color: #1181ad;
+    color: #DCE4EC;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,6 +93,53 @@
 
   /* Style du texte par défaut */
   color: #ffffff;
+}
+
+/* 1. Style de base d'une section (prenant toute la largeur) */
+.full-width-section {
+  width: 100%;
+  padding: 80px 0; /* Gros espacement Haut/Bas pour bien séparer */
+  background-color: #f5f7fa; /* Couleur par défaut (Gris Clair de ta charte) */
+  
+  /* Flex pour centrer le container si besoin, mais pas obligatoire */
+  display: flex;
+  justify-content: center;
+}
+
+/* 2. Style de la section ALTERNATIVE (1 sur 2) */
+.full-width-section.section-alt {
+  background-color: #ffffff; /* Fond Blanc pour le contraste */
+  border-top: 1px solid rgba(0,0,0,0.03); /* Séparateurs subtils */
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+/* 3. CONTENEUR (Limite la largeur de la carte au centre) */
+.full-width-section .container {
+  width: 100%;
+  max-width: 1100px; /* Largeur max de ta carte */
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* ======================================
+  LOGIQUE D'INVERSION (ZIG-ZAG)
+  ======================================
+*/
+
+/* Si on est dans une section .section-alt (les paires), on inverse la carte */
+.section-alt tgam-home-item ::ng-deep .info-card {
+  flex-direction: row-reverse;
+}
+
+/* RESPONSIVE : On annule l'inversion sur mobile */
+@media (max-width: 992px) {
+  .full-width-section {
+    padding: 60px 0; /* Un peu moins d'espace sur mobile */
+  }
+  
+  .section-alt tgam-home-item ::ng-deep .info-card {
+    flex-direction: column; /* Toujours vertical sur mobile */
+  }
 }
 
 /* 3. Centre le contenu et le met en colonnes */

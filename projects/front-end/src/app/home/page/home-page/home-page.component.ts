@@ -6,9 +6,11 @@ import { ResponsiveService } from '../../../common/services/responsive.service';
 import { AsyncPipe, NgIf, NgFor } from '@angular/common';
 import { HomeItemComponent } from '../../components/home-item/home-item.component';
 import { HomeService } from '../../../services/home/home.service';
-import { distinctUntilChanged, startWith, Subscription, switchMap } from 'rxjs';
+import { distinctUntilChanged, forkJoin, startWith, Subscription, switchMap } from 'rxjs';
 import { HomeFeature } from '../../types/homeFeature.model';
 import internal from 'stream';
+import { OpeningHour } from '../../types/openingHours.model';
+import { OpeningHoursService } from '../../../services/openingHours/opening-hours.service';
 
 @Component({
   selector: 'tgam-home-page',
@@ -27,12 +29,14 @@ import internal from 'stream';
 })
 export class HomePageComponent {
   
-  constructor(public responsive: ResponsiveService, private homeService: HomeService, private translate: TranslateService) {
+  constructor(public responsive: ResponsiveService, private homeService: HomeService, private translate: TranslateService, private openingHourService: OpeningHoursService) {
   }
   
   private langChangeSubscription?: Subscription;
   
   public allFeatures: HomeFeature[] = [] 
+  public allHours: OpeningHour[] = []; // Store hours here
+  public serviceHours?: OpeningHour;
   
   ngOnInit() {
 
@@ -43,11 +47,20 @@ export class HomePageComponent {
 
       switchMap(() => {
         console.log('Chargement des HomeFeatures...');
-        return this.homeService.getHomeFeature(); 
+        return forkJoin({
+          features: this.homeService.getHomeFeature(),
+          hours: this.openingHourService.getOpeningHours() // Your API call
+        }); 
       })
     ).subscribe({
       next: (data) => {
-        this.allFeatures = data;
+        this.allFeatures = data.features;
+        this.allHours = data.hours.filter(h => h.day !== null && h.day !== '');
+
+        this.serviceHours = data.hours.find(h => 
+          (h.day === null || h.day === '') && 
+          (h.status === null || h.status === '')
+        );
         console.log('Données reçues !');
       },
       error: (err) => {
